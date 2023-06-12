@@ -1,17 +1,16 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
-@Entity('members', { schema: 'syumagi' })
-export class Members {
-  @Column('varchar', { primary: true, name: 'name', length: 16 })
-  name: string;
+@Entity('member', { schema: 'public' })
+export class Member {
+  @PrimaryColumn('text', { name: 'name' })
+  name: string | null;
 
-  @Column('varchar', { name: 'position', length: 255 })
-  position: string;
+  @Column('text', { name: 'position', nullable: true })
+  position: string | null;
 
-  @Column('timestamp', {
+  @Column('timestamp without time zone', {
     name: 'create_time',
     nullable: true,
-    default: () => 'CURRENT_TIMESTAMP',
   })
   createTime: Date | null;
 }

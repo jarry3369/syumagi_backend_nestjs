@@ -1,20 +1,16 @@
-import { Column, Entity, OneToMany } from 'typeorm';
-import { Song } from './entity.song';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
-@Entity('album', { schema: 'syumagi' })
+@Entity('album', { schema: 'public' })
 export class Album {
-  @Column('varchar', { primary: true, name: 'title', length: 255 })
-  title: string;
+  @PrimaryColumn('text', { name: 'title' })
+  title: string | null;
 
-  @Column('varchar', { name: 'type', length: 10, default: () => "'single'" })
-  type: string;
+  @Column('text', { name: 'type', nullable: true })
+  type: string | null;
 
   @Column('date', { name: 'release_date', nullable: true })
   releaseDate: string | null;
 
-  @Column('mediumtext', { name: 'cover' })
-  cover: string;
-
-  @OneToMany(() => Song, (song) => song.album2)
-  songs: Song[];
+  @Column('text', { name: 'cover', nullable: true })
+  cover: string | null;
 }
