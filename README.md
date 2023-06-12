@@ -6,7 +6,8 @@
 ## Description
 
 Syumagi Fan page Project API Backend Server  
-[NestJs Framework](https://nestjs.com//) + [TypeScript](https://www.typescriptlang.org/) + [TypeORM](https://typeorm.io/) + [MySQL](https://www.mysql.com/) Base
+[NestJs Framework](https://nestjs.com//) + [TypeScript](https://www.typescriptlang.org/) + [TypeORM](https://typeorm.io/) + [postgresql](https://www.postgresql.org/) Base  
+Automatically deploy with Serverless + AWS Lambda
 
 ## Relations
 
