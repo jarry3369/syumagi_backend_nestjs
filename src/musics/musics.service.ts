@@ -1,12 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Song } from 'src/entities/entity.song';
+
+import { Music } from '@entity/entity.music';
 
 @Injectable()
 export class MusicsService {
   constructor(
-    @InjectRepository(Song)
-    private musicsRepository: Repository<Song>,
+    @InjectRepository(Music)
+    private musicsRepository: Repository<Music>,
   ) {}
+
+  getMusics(): any {
+    return this.musicsRepository.find();
+  }
 }
