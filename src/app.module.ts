@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { MusicsModule } from './musics/musics.module';
+import { MusicsModule, GuestModule, AlbumsModule } from '@/collector.module';
 
 @Module({
   imports: [
@@ -16,7 +16,9 @@ import { MusicsModule } from './musics/musics.module';
       entities: [__dirname + '/entities/entity.*.{js,ts}'],
       synchronize: true,
     }),
+    AlbumsModule,
     MusicsModule,
+    GuestModule,
   ],
   controllers: [],
   providers: [],

@@ -10,4 +10,9 @@ export class MusicsController {
   getMusics() {
     return this.musicsService.getMusics();
   }
+
+  @Get()
+  getAlbums() {
+    return this.getAlbums();
+  }
 }
